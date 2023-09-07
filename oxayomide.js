@@ -18,8 +18,8 @@ app.get('/api', (req, res) => {
   const currentTime = new Date().toISOString();
 
   // GitHub URLs
-  const githubFileUrl = 'https://github.com/username/repo/blob/main/file_name.ext';
-  const githubRepoUrl = 'https://github.com/username/repo';
+  const githubFileUrl = 'https://github.com/AyomiCoder/hngx_endpoint_task_1/blob/main/oxayomide.js';
+  const githubRepoUrl = 'https://github.com/AyomiCoder/hngx_endpoint_task_1.git';
 
 
   // Response object
@@ -36,7 +36,7 @@ app.get('/api', (req, res) => {
   res.json(responseObject);
 });
 
-// Start the server
+// Local server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
