@@ -14,8 +14,8 @@ app.get('/api', (req, res) => {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const currentDay = daysOfWeek[new Date().getUTCDay()];
 
-  // The current UTC time within a +/-2 minute window
-  const currentTime = new Date().toISOString().replace(/[^0-9TZ]/g, '') + 'Z';
+  // The current UTC time
+  const utcTime = `${now.getUTCFullYear()}-${formatTwoDigits(now.getUTCMonth() + 1)}-${formatTwoDigits(now.getUTCDate())}T${formatTwoDigits(now.getUTCHours())}:${formatTwoDigits(now.getUTCMinutes())}:${formatTwoDigits(now.getUTCSeconds())}Z`;
 
   // GitHub URLs
   const githubFileUrl = 'https://github.com/AyomiCoder/hngx_endpoint_task_1/blob/main/oxayomide.js';
