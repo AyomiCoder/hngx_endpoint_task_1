@@ -15,6 +15,7 @@ app.get('/api', (req, res) => {
   const currentDay = daysOfWeek[new Date().getUTCDay()];
 
   // The current UTC time
+  const now = new Date();
   const currentTime = `${now.getUTCFullYear()}-${formatTwoDigits(now.getUTCMonth() + 1)}-${formatTwoDigits(now.getUTCDate())}T${formatTwoDigits(now.getUTCHours())}:${formatTwoDigits(now.getUTCMinutes())}:${formatTwoDigits(now.getUTCSeconds())}Z`;
 
   // GitHub URLs
