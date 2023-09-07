@@ -16,7 +16,13 @@ app.get('/api', (req, res) => {
 
   // The current UTC time
   const now = new Date();
-  const currentTime = `${now.getUTCFullYear()}-${formatTwoDigits(now.getUTCMonth() + 1)}-${formatTwoDigits(now.getUTCDate())}T${formatTwoDigits(now.getUTCHours())}:${formatTwoDigits(now.getUTCMinutes())}:${formatTwoDigits(now.getUTCSeconds())}Z`;
+  const year = now.getUTCFullYear();
+  const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(now.getUTCDate()).padStart(2, '0');
+  const hours = String(now.getUTCHours()).padStart(2, '0');
+  const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+  const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+  const currentTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
 
   // GitHub URLs
   const githubFileUrl = 'https://github.com/AyomiCoder/hngx_endpoint_task_1/blob/main/oxayomide.js';
@@ -37,7 +43,7 @@ app.get('/api', (req, res) => {
   res.json(responseObject);
 });
 
-export default app;
+module.exports = app;
 
 // Local server
 app.listen(port, () => {
