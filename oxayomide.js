@@ -15,7 +15,7 @@ app.get('/api', (req, res) => {
   const currentDay = daysOfWeek[new Date().getUTCDay()];
 
   // The current UTC time within a +/-2 minute window
-  const currentTime = new Date().toISOString();
+  const currentTime = new Date().toISOString().replace(/[^0-9TZ]/g, '') + 'Z';
 
   // GitHub URLs
   const githubFileUrl = 'https://github.com/AyomiCoder/hngx_endpoint_task_1/blob/main/oxayomide.js';
@@ -24,10 +24,10 @@ app.get('/api', (req, res) => {
 
   // Response object
   const responseObject = {
-    slack_name: "OxAyomide",
+    slack_name: "oxAyomide",
     current_day: currentDay,
     utc_time: currentTime,
-    track: "Backend",
+    track: "backend",
     github_file_url: githubFileUrl,
     github_repo_url: githubRepoUrl,
     status_code: 200
